@@ -48,7 +48,7 @@ print(df_csv_city)
 df_csv_mumbai = df_csv[df_csv['City'] == "Mumbai"]
 print(df_csv_mumbai)
 
-df_csv_high_perception = df_csv[df_csv['PERCEPTION'] > 70]
+df_csv_high_perception = df_csv[df_csv['PERCEPTION'] > 50]
 print(df_csv_high_perception)
 
 df_csv_like_ore = df_csv[df_csv['City'].str.contains("ore")]
