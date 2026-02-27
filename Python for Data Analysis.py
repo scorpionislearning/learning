@@ -4,7 +4,7 @@ import os as os
 os.getcwd
 
 df_csv = pd.read_csv('C:/Users/harya/Documents/HSA/Growth/NIRF Ranking 2020.csv',header=0)
-print(df_csv.head())
+# print(df_csv.head())
 
 # ===================================================================Google Sheets API to read data from a Google Sheet
 
@@ -36,23 +36,32 @@ df_csv_test6 = df_csv.iloc[-20:,-3:]
 
 df_csv_copy = df_csv.copy()
 df_csv_copy.set_index('City', inplace=True)
-print(df_csv_copy.head())
+# print(df_csv_copy.head())
 
 df_csv_city = df_csv_copy.loc[['Mumbai','Pune']]
-print(df_csv_city)
+# print(df_csv_city)
 
 df_csv_city = df_csv_copy.loc[['Mumbai','Pune'],['RPC','PERCEPTION']]
-print(df_csv_city)
+# print(df_csv_city)
 
 
 df_csv_mumbai = df_csv[df_csv['City'] == "Mumbai"]
-print(df_csv_mumbai)
+# print(df_csv_mumbai)
 
 df_csv_high_perception = df_csv[df_csv['PERCEPTION'] > 50]
-print(df_csv_high_perception)
+# print(df_csv_high_perception)
 
 df_csv_like_ore = df_csv[df_csv['City'].str.contains("ore")]
-print(df_csv_like_ore)
+# print(df_csv_like_ore)
 
 df_csv_like_many = df_csv[(df_csv['City'].str.contains("ore") | df_csv['City'].str.contains("pur")) & (df_csv['PERCEPTION'] > 40)]
-print(df_csv_like_many)
+# print(df_csv_like_many)
+
+
+df_csv_drop = df_csv.copy()
+print(df_csv.head)
+
+df_csv_drop.dropna()
+print(df_csv_drop.head())
+
+df_csv.info()
